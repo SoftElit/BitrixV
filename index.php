@@ -28,4 +28,11 @@ $APPLICATION->SetTitle("Мебельная компания");
 	false
 );
 
+//мой код - вызываю свою кастомную функцию dump() для вывода значения переменной в браузер
+$myArr = ['Моя тестовая строка и', 250973];
+dump($myArr);
 ?>
+<!--мой код - вызываю свою кастомную функцию printKeywords() для вывода в браузер ключевых слов текущей страницы-->
+<p>keywords:<br>
+<?$APPLICATION->ShowProperty("keywords");?>
+</p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
