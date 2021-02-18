@@ -1,0 +1,4 @@
+<?
+//комментарии:
+//hgjdfhgkjewfcasc
+?>
