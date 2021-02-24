@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Продукция");
+// $APPLICATION->SetTitle("Продукция"); /* вместо этой строки установим в следующей строке параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
+ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y"); /* установим параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
 ?><?$APPLICATION->IncludeComponent("bitrix:catalog", ".default", array(
 	"IBLOCK_TYPE" => "products",
 	"IBLOCK_ID" => "2",
