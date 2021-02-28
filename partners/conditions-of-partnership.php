@@ -3,8 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("keywords", "заявка, партнерский договор");
 $APPLICATION->SetPageProperty("description", "«Порядок подачи заявки на партнерство и бланк партнерского договора");
 $APPLICATION->SetTitle("Условия партнерства");
-?>
- <br>
+?><br>
  <b><span style="color: #438ccb;">Как стать партнером </span></b><br>
  <br>
  1. Зарегистрироваться на сайте <br>
@@ -25,4 +24,4 @@ $APPLICATION->SetTitle("Условия партнерства");
 
 <!-- Выведем унаследованные от корневого раздела свойства - ключевые слова к примеру --> <br>
 <p>keywords:<?$APPLICATION->ShowProperty("keywords")?></p>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
