@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
-?><?$APPLICATION->IncludeComponent("bitrix:news", "template_dump", Array(
+?><?$APPLICATION->IncludeComponent("bitrix:news", "news", Array(
 	"ADD_ELEMENT_CHAIN" => "Y",	// Включать название элемента в цепочку навигации
 		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
