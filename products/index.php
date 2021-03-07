@@ -3,9 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 // $APPLICATION->SetTitle("Продукция"); /* вместо этой строки установим в следующей строке параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
  $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y"); /* установим параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-	"template1",
-	Array(
+	"bitrix:catalog", 
+	"template1", 
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
@@ -25,11 +25,16 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"COMPATIBLE_MODE" => "Y",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
 		"DETAIL_BACKGROUND_IMAGE" => "-",
-		"DETAIL_BRAND_PROP_CODE" => array("",""),
+		"DETAIL_BRAND_PROP_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP","MAGNIFIER"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "MAGNIFIER",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -37,7 +42,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
 		"DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
-		"DETAIL_PROPERTY_CODE" => array(0=>"SIZE",1=>"S_SIZE",2=>"ARTNUMBER",3=>"MATERIAL",4=>"MANUFACTURER",5=>"",),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "SIZE",
+			1 => "S_SIZE",
+			2 => "ARTNUMBER",
+			3 => "MATERIAL",
+			4 => "MANUFACTURER",
+			5 => "",
+		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_SHOW_PICTURE" => "Y",
 		"DETAIL_SHOW_POPULAR" => "Y",
@@ -49,7 +61,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_PANEL" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_TOP_PAGER" => "Y",
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
@@ -60,7 +72,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"IBLOCK_TYPE" => "products",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "1",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -72,8 +85,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"LIST_META_DESCRIPTION" => "-",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false}]",
-		"LIST_PROPERTY_CODE" => array(0=>"PRICECURRENCY",1=>"",),
+		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false},{'VARIANT':'0','BIG_DATA':false}]",
+		"LIST_PROPERTY_CODE" => array(
+			0 => "PRICECURRENCY",
+			1 => "",
+		),
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -91,10 +107,12 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => "arrows",
-		"PAGER_TITLE" => "Продукция",
-		"PAGE_ELEMENT_COUNT" => "10",
+		"PAGER_TITLE" => "Каталог",
+		"PAGE_ELEMENT_COUNT" => "5",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRICE_CODE" => array("PRICE"),
+		"PRICE_CODE" => array(
+			0 => "PRICE",
+		),
 		"PRICE_VAT_INCLUDE" => "N",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -105,7 +123,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"SEARCH_PAGE_RESULT_COUNT" => "50",
 		"SEARCH_RESTART" => "N",
 		"SEARCH_USE_LANGUAGE_GUESS" => "Y",
-		"SECTIONS_SHOW_PARENT_NAME" => "N",
+		"SECTIONS_SHOW_PARENT_NAME" => "Y",
 		"SECTIONS_VIEW_MODE" => "LIST",
 		"SECTION_BACKGROUND_IMAGE" => "-",
 		"SECTION_COUNT_ELEMENTS" => "Y",
@@ -114,7 +132,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_FOLDER" => "/products/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"","element"=>"#SECTION_ID#/#ELEMENT_ID#/","section"=>"#SECTION_ID#/","sections"=>"","smart_filter"=>"#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -138,6 +155,17 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
-		"USE_STORE" => "N"
-	)
+		"USE_STORE" => "N",
+		"COMPONENT_TEMPLATE" => "template1",
+		"LABEL_PROP_MOBILE" => "",
+		"LABEL_PROP_POSITION" => "top-left",
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_CODE_PATH#/",
+			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+			"compare" => "",
+			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
