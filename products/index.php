@@ -4,7 +4,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
  $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y"); /* установим параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
-	"template1", 
+	".default_old", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -32,9 +32,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array(
-			0 => "MAGNIFIER",
-		),
+		"DETAIL_DETAIL_PICTURE_MODE" => "MAGNIFIER",
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -72,8 +70,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"IBLOCK_TYPE" => "products",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(
-		),
+		"LABEL_PROP" => "-",
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "1",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -156,15 +153,21 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => "template1",
+		"COMPONENT_TEMPLATE" => ".default_old",
 		"LABEL_PROP_MOBILE" => "",
 		"LABEL_PROP_POSITION" => "top-left",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
-			"section" => "#SECTION_CODE_PATH#/",
-			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-			"compare" => "",
-			"smart_filter" => "#SECTION_ID#/filter/#SMART_FILTER_PATH#/apply/",
+			"section" => "#SECTION_CODE#/",
+			"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
+			"compare" => "compare.php?action=#ACTION_CODE#",
+			"smart_filter" => "#SECTION_CODE#/filter/#SMART_FILTER_PATH#/apply/",
+		),
+		"VARIABLE_ALIASES" => array(
+			"compare" => array(
+				"ACTION_CODE" => "action",
+			),
 		)
 	),
 	false

@@ -367,4 +367,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/include/test_include.php");
 	)
 );?><br>
 </div>
- <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+ &nbsp;
+<!-- Форма поиска (интерированный PHP+HTML шаблон -->
+<?$APPLICATION->IncludeComponent(
+	"bitrix:search.form",
+	"head",
+	Array(
+		"PAGE" => "#SITE_DIR#search/index.php",
+		"USE_SUGGEST" => "N"
+	)
+);?><br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
