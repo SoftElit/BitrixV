@@ -1,10 +1,11 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+//$APPLICATION-> ShowViewContent(“rating”); //конструкция ShowViewContent() укажет, что необходимо отобразить содержимое контейнера “rating” (название контейнера передаем в качестве параметра)
 // $APPLICATION->SetTitle("Продукция"); /* вместо этой строки установим в следующей строке параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
  $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y"); /* установим параметр "NOT_SHOW_NAV_CHAIN" для скрытия навигационной цепочки в каталоге products (Каталог , "Продукция") */
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
-	".default_old", 
+	"template1", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -32,7 +33,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => "MAGNIFIER",
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "MAGNIFIER",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
@@ -55,7 +58,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"DETAIL_SHOW_VIEWED" => "Y",
 		"DETAIL_STRICT_SECTION_CHECK" => "N",
 		"DETAIL_USE_COMMENTS" => "N",
-		"DETAIL_USE_VOTE_RATING" => "N",
+		"DETAIL_USE_VOTE_RATING" => "Y",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_PANEL" => "N",
@@ -70,7 +73,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"IBLOCK_TYPE" => "products",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => "-",
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "1",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -147,16 +151,35 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 		"USE_COMPARE" => "N",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_REVIEW" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => ".default_old",
+		"COMPONENT_TEMPLATE" => "template1",
 		"LABEL_PROP_MOBILE" => "",
 		"LABEL_PROP_POSITION" => "top-left",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => "",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+			0 => "18",
+			1 => "PRICE",
+			2 => "Availability",
+			3 => "MANUFACTURER",
+		),
+		"FILTER_NAME" => "",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PRICE_CODE" => array(
+		),
+		"LIST_PROPERTY_CODE_MOBILE" => array(
+		),
+		"DETAIL_VOTE_DISPLAY_AS_RATING" => "rating",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE#/",
